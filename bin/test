@@ -5,9 +5,6 @@ set -e
 bin_dir=$(dirname "$0")
 pushd $bin_dir
 
-xcodebuild \
-  -project ../Agnostic-Automation-Setup.xcodeproj \
-  -scheme Agnostic-Automation-Setup \
-  -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' \
-  test \
-  | bundle exec xcpretty --color --test
+bundle exec scan \
+  --project ../Agnostic-Automation-Setup.xcodeproj \
+  --scheme Agnostic-Automation-Setup \
