@@ -1,5 +1,8 @@
 language: objective-c
 osx_image: xcode7.3
 
+before_script:
+  - ./bin/bootstrap
+
 script:
-    - ./bin/test
+  - ./bin/test
