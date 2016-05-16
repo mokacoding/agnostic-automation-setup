@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# Bootstraps the repository to be able to build, test, etc.
+#
+
+set -e
+
+bin_dir=$(dirname "$0")
+pushd $bin_dir
+
+bundle install
+
+popd
