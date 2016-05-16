@@ -5,6 +5,10 @@ set -e
 bin_dir=$(dirname "$0")
 pushd $bin_dir
 
-bundle exec scan \
+# See https://github.com/fastlane/fastlane/issues/3921 and the fact that these
+# builds got stuck:
+# https://travis-ci.org/mokacoding/agnostic-automation-setup/builds/130664064
+# https://travis-ci.org/mokacoding/agnostic-automation-setup/builds/130664516
+FASTLANE_EXPLICIT_OPEN_SIMULATOR=1 bundle exec scan \
   --project ../Agnostic-Automation-Setup.xcodeproj \
   --scheme Agnostic-Automation-Setup \
