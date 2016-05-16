@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+xcodebuild \
+  -project Agnostic-Automation-Setup.xcodeproj \
+  -scheme Agnostic-Automation-Setup \
+  -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' \
+  test
